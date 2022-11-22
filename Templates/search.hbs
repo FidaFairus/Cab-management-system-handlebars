@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url('https://static.vecteezy.com/system/resources/previews/002/058/490/non_2x/colorful-abstract-background-free-vector.jpg');
+
+        }
+        .main{
+            margin-top:50px;
+            margin-left:135px;
+            height: 500px;
+            width: 1000px;
+            background-color: white;
+
+        }
+        .container2{
+            display:flex;
+            border-color: black;
+            background-color: white;
+
+        }
+        .box1{
+            width:400px;
+            height:444px;
+            background-color: white;
+        
+         }
+         .box2{
+            width:600px;
+            height:444px;
+         }
+         a:link{
+          text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+   <div class="main">
+       <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <div class="container">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/home" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">SignUp</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Booking</a>
+                            <a class="dropdown-item" href="#">Offers 2</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0">
+                    
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/login" style="color:black">Login</a></button>
+                </form>
+            </div>
+         </div>
+       </nav>
+       <div class="container2">
+            <div class="box1">
+                <table style="margin-left:150px;margin-top:150px;">
+                    <tr>
+                        <td><input type="text" id="search" placeholder="pick up point" style="border:solid;border-radius: 10px;width:250px; height:35px;text-align: center;"></td>
+                    </tr>
+                    <tr>
+                    <td><input type="text" id="search" placeholder="Destination" style="border:solid;border-radius: 10px;width:250px; height:35px;text-align: center;margin-top: 20px;"></td></tr>
+                    <tr>
+                    <td><input  type="Button" value="Search" style="background-color: rgb(168, 60, 214);height: 30px;width:250px;border-radius: 10px;border: none;margin-top: 20px;"></td>
+                    </tr>
+                 </table>
+            </div>
+            <div class="box2"><img src="static/images/cabimage2.png" style="width:500px;height:400px;margin-top:40px;margin-left:100px;"></div>
+       </div>
+       
+
+   </div> 
+</body>
+</html>

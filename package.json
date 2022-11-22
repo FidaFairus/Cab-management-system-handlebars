@@ -1,0 +1,26 @@
+{
+  "name": "cab-hbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FidaFairus/Cab-management-new.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FidaFairus/Cab-management-new/issues"
+  },
+  "homepage": "https://github.com/FidaFairus/Cab-management-new#readme",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "readline-sync": "^1.4.10"
+  }
+}

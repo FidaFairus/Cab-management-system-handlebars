@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+       body{
+            background-image: url('https://img.freepik.com/free-vector/watercolor-stains-abstract-background_23-2149107182.jpg?size=626&ext=jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main{
+            margin-top:50px;
+            margin-left:135px;
+            height:500px;
+            width:1000px;
+            background-color: white;
+
+        }
+        .container2{
+            display:flex;
+            border-color: black;
+            background-color: white;
+
+        }
+        .box1{
+            width:400px;
+            height:444px;
+            background-color: white;
+        
+         }
+         .box2{
+            width:600px;
+            height:444px;
+         }
+         .form1{
+          margin-top: 100px;
+          margin-left: 150px;
+         }
+         a:link{
+          text-decoration: none;
+         }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+       <div class="container">
+         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+             aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="collapsibleNavId">
+             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                 <li class="nav-item">
+                     <a class="nav-link active" href="/home" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/search">Search</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/signup">SignUp</a>
+                 </li>
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                     <div class="dropdown-menu" aria-labelledby="dropdownId">
+                         <a class="dropdown-item" href="#">Booking</a>
+                         <a class="dropdown-item" href="#">Offers</a>
+                     </div>
+                 </li>
+             </ul>
+             <form class="d-flex my-2 my-lg-0">
+                 
+                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/login" style="color:black">Login</a></button>
+             </form>
+         </div>
+      </div>
+    </nav>
+    <div class="container2">
+      <div class="box1">
+        <div class="form1">
+          <p style="color:rgb(4, 4, 4);margin-left: 45px;font-size: 20px;">Login Please</p>
+        <form name="loginform" id="loginform" action="search.html">
+          <label for="fname">Username:</label><br>
+          <input type="email" id="username" name="fname" minlength="4" maxlength="25" required><br>
+          <label for="lname">Password:</label><br>
+          <input type="password" id="password" name="lname" minlength="5" maxlength="25" required><br><br>
+          <span id="success"></span>
+          <input type="submit" id="btn-login" name="btn-login" value="Login" style="width:190px;background-color: rgb(38, 78, 146);color: white;">
+        </form>
+        </div>
+      </div>
+      <div class="box2"><img src="static/images/cab2.jpg" style="width:500px;height:400px;margin-top:40px;margin-left:100px;"></div>
+    </div>
+
+
+
+
+    <script>
+    
+    
+    let username = document.forms['loginform']['username'];
+    let password = document.forms['loginform']['password'];
+    let btn = document.getElementById('btn-login');
+    
+    document.querySelectorAll('#loginform input').forEach(e=>{
+        e.addEventListener('keyup', function(event){
+            if(!username.validity.valid || !password.validity.valid){
+                btn.setAttribute('disabled', true);
+            }
+            else{
+                btn.removeAttribute('disabled');
+            }
+        })
+    })
+
+    </script>
+</body>
+</html>

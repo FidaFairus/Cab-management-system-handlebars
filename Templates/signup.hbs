@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <style>
+        body{
+            background-image: url('https://thumbs.dreamstime.com/b/abstract-mood-series-website-background-color-images-high-resolution-backgrounds-designed-use-websites-print-soft-157860142.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main{
+            margin-top:50px;
+            margin-left:135px;
+            height: 500px;
+            width: 1000px;
+            background-color: white;
+
+        }
+        .container2{
+            display:flex;
+            border-color: black;
+            background-color: white;
+
+        }
+        .box1{
+            width:600px;
+            height:447px;
+            background-color: white;
+        
+         }
+         .box2{
+            width:400px;
+            height:447px;
+         }
+         a:link{
+          text-decoration: none;
+         }
+         .parent{
+            margin-top: 10px;
+            margin-left: 10px;
+            width:550px;
+            height:444px;
+         }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+           <div class="container">
+             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                 aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="collapsibleNavId">
+                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                     <li class="nav-item">
+                         <a class="nav-link active" href="/home" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="/search">Search</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="/signup">SignUp</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                         <div class="dropdown-menu" aria-labelledby="dropdownId">
+                             <a class="dropdown-item" href="#">Booking</a>
+                             <a class="dropdown-item" href="#">Offers 2</a>
+                         </div>
+                     </li>
+                 </ul>
+                 <form class="d-flex my-2 my-lg-0">
+                     
+                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/login" style="color:black">Login</a></button>
+                 </form>
+             </div>
+          </div>
+        </nav>
+        <div class="container2">
+        <div class="box1">
+        
+       
+    <div class="parent">
+        <div class="content"></div>
+        <div class="aside">
+            {{!-- onsubmit="validate(event)" --}}
+            <form  name="regform" method="POST">
+                <h2>Register Now</h2>
+                <input id="myInput"  type="text" class="form-control"style="margin-bottom:20px" placeholder="Full Name" name="FULLNAME">
+                <input id="myInput"  type="text" class="form-control"style="margin-bottom:20px" placeholder="Mobile Number" name="MOBILE_NUMBER">
+                <input id="myInput" name="EMAIL" type="email" class="form-control"style="margin-bottom:20px" placeholder="EMAIL">
+            <input id="myInput" name="USERNAME" type="text" class="form-control"style="margin-bottom:20px" placeholder="USERNAME">
+            <input id="myInput2" type="password" class="form-control " style="margin-bottom:20px" placeholder="password" name="PASSWORD">
+            <input id="myInput3" type="password" class="form-control"style="margin-bottom:20px" placeholder="Confirm Password" name="CONFIRM_PASSWORD">
+           <center>   <span id="err-name" style="color: red;display:block;margin-bottom: 5px;"></span>
+             <input id="submit"type="submit" class="col-5" value="Submit" name="btnsubmit"></center>
+        </form>
+        </div>
+    </div>
+
+    <script>
+        function validate(e){
+              e.preventDefault();
+               var password =document.getElementById('myInput2').value;
+               var cpassword =document.getElementById('myInput3').value;
+               //alert(txt);
+               var email=document.regform.email.value;  
+                var atposition=email.indexOf("@");  
+                var dotposition=email.lastIndexOf(".");  
+            if (atposition<1  || dotposition+2>=email.length){  
+                 alert("Please enter a valid e-mail address");  
+                 return false;  
+            }  
+            var nameRegex = /^[a-zA-Z\-.]+$/;
+            var validUsername = document.regform.uname.value.match(nameRegex);
+            if(validUsername == null){
+                alert("Your username is not valid. Only characters A-Z, a-z and '-' are  acceptable.");
+                document.regform.uname.focus();
+               return false
+            }
+               if(password.length < 8 ){
+       
+                 document.getElementById('err-name').innerText="Password requires atleast 8 characters";
+                 alert(password.length)
+               }
+               
+               if(password!=cpassword){
+       
+       document.getElementById('err-name').innerText="Password and Confirm password doesn't match";
+     }
+     else{
+        window.location.assign("login.hbs")
+     }
+           }
+       
+       
+           </script>
+             </div>
+             <div class="box2"><img src="static/images/purple.png" style="width:370px;height:250px;margin-top:60px;"></div>
+       </div>
+       
+</body>
+</html>
